@@ -13,12 +13,12 @@ def mortgage_calc()
 end
 
 def advanced_calc()
-  print "\nWhich option would you like? square(s) or power(p)? Please type in one (s or p)  \n"
+  print "\nWhich option would you like? square(s) or power(p)? Please type in one (s or p)  \n".foreground(:blue)
   ans = gets.chomp.downcase
   if ans == "s"
     print "What number would you like the square of? "
     third = gets.chomp.to_i
-    print "\n***\nThe answer is: \n\n " + square(third).to_s
+    print "\n***\nThe answer is: \n\n " + square(third).to_s.foreground(:yellow)
     print "\n***\n"
   elsif ans == "p"
     print "What is the first number?  "
@@ -26,10 +26,10 @@ def advanced_calc()
     print "Ok, you entered #{first }, now what is your second number?   "
     second = gets.chomp.to_i
     puts "alright so you entered #{first } and #{second } \n "
-    print "\n***\nThe answer is:   \n\n" + power(first, second).to_s
+    print "\n***\nThe answer is:   \n\n" + power(first, second).to_s.foreground(:yellow)
     print "\n***\n"
   else
-    print "\n\n\n Error In Advanced Input\n\n\n"
+    print "\n\n\n Error In Advanced Input\n\n\n".foreground(:red)
   end
 end
 
@@ -43,7 +43,7 @@ end
 
 def basiccalc()
   print "What would you like to do? \n"
-  print "add (+) , subtract (-) , multiply (*) , divide (/) \n"
+  print "add (+) , subtract (-) , multiply (*) , divide (/) \n".foreground(:blue)
   answer = gets.chomp
   filterbasic(answer)
 
@@ -72,7 +72,7 @@ def add()
   first_number = gets.chomp.to_i
   print "What is the second number? --> "
   second_number = gets.chomp.to_i
-  print "*** \n\nThe Answer:     #{first_number + second_number}\n\n***\n"
+  print "*** \n\nThe Answer:     #{first_number + second_number}\n\n***\n".foreground(:yellow)
 end
 
 def subtract()
@@ -80,7 +80,7 @@ def subtract()
   first_number = gets.chomp.to_i
   print "What is the second number? --> "
   second_number = gets.chomp.to_i
-print "*** \n\nThe Answer:     #{first_number - second_number}\n\n***\n"
+print "*** \n\nThe Answer:     #{first_number - second_number}\n\n***\n".foreground(:yellow)
 end
 
 def multiply()
@@ -88,7 +88,7 @@ def multiply()
   first_number = gets.chomp.to_i
   print "What is the second number? --> "
   second_number = gets.chomp.to_i
-  print "*** \n\nThe Answer:     #{first_number * second_number}\n\n***\n"
+  print "*** \n\nThe Answer:     #{first_number * second_number}\n\n***\n".foreground(:yellow)
 end
 
 def divide()
@@ -97,7 +97,7 @@ def divide()
   first_number = gets.chomp.to_i
   print "What is the second number? --> "
   second_number = gets.chomp.to_i
-  print "*** \n\nThe Answer:     #{first_number / second_number}\n\n***\n"
+  print "*** \n\nThe Answer:     #{first_number / second_number}\n\n***\n".foreground(:yellow)
 end
 ### Nick ###
 def filterselection(input)
@@ -115,16 +115,16 @@ def filterselection(input)
     exit = true
     print "\n\n ****************\n \n GOOD BYE \n\n ****************"
   else
-    print "\n***\n You have not entered a valid choice. \n***\n"
+    print "\n***\n You have not entered a valid choice. \n***\n".foreground(:red )
   end
 exit
 end
 
 def options()
   print "\n What type of calculator would you like to use?\n"
-  print "(1 or B  => Basic Calculator)\n"
-  print "(2 or A  => Advanced Calculator)\n"
-  print "(3 or E  => Exit)\n\n"
+  print "(1 or B  => Basic Calculator)\n".foreground(:blue)
+  print "(2 or A  => Advanced Calculator)\n".foreground(:blue)
+  print "(3 or E  => Exit)\n\n".foreground(:blue)
 end
 
 
