@@ -48,6 +48,7 @@ def find_bmi()
   gc
 end
 
+
 def advanced_calc()
   print "\nWhich option would you like? square(s) or power(p)? Please type in one (s or p)  \n".foreground(:blue)
   ans = gets.chomp.downcase
