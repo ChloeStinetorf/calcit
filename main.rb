@@ -1,6 +1,17 @@
 require  'rainbow'
 ### Simon ###
 
+def mortgage_calc()
+  print "\n\n"
+  print "What is the principal amount? "
+  p = gets.chomp.to_i
+  print "What is the interest rate? "
+  r = gets.chomp.to_i/100
+  print "How many years left on your mortgage? "
+  n = gets.chomp.to_i
+  c = p((r*(1 + r)**n)/(((1 + r)**n)-1))
+end
+
 def advanced_calc()
   print "\nWhich option would you like? square(s) or power(p)? Please type in one (s or p)  \n"
   ans = gets.chomp.downcase
