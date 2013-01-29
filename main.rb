@@ -9,12 +9,11 @@ end
 
 def find_bmi()
   puts `clear`
-  print "Let me help you find out your Body Mass Index, how much do you weight?"
+  print "Let me help you find out your Body Mass Index, how much do you weight? "
    lbs = gets.chomp.to_f
-  print "Now tell me how tall are you in inches?"
+  print "Now tell me how tall are you in inches? "
   inch = gets.chomp.to_f
-  print "Your BMI is " + bmi(lbs, inch).to_s
-end
+  print "\nYour BMI is " + bmi(lbs, inch).to_s +"\n"
 
 
 def advanced_calc()
