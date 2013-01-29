@@ -36,13 +36,13 @@ def basiccalc()
 end
 
 def filterbasic(answer)
-  if answer == "+" || answer == "a"
+  if answer == "+" || answer == "a" || answer == "add"
     add()
-  elsif answer =="-" || answer == "s"
+  elsif answer =="-" || answer == "s" || answer == "subtract"
     subtract()
-  elsif answer == "*" || answer == "m"
+  elsif answer == "*" || answer == "m" || answer == "multiply"
     multiply
-  elsif answer == "/" || answer == "d"
+  elsif answer == "/" || answer == "d" || answer == "divide"
     divide()
   else
     print "error"
