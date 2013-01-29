@@ -1,21 +1,22 @@
 
 def advanced_calc()
-  print "Which option would you like? Square or power? Please type in one"
-  square = gets.chomp.downcase
-  power = gets.chomp.downcase
-  if power
-  print "What is the first number?"
-  first = gets.chomp
-  puts "Ok, you entered #{first }, now what is your second number? "
-  second = gets.chomp
-  puts "alright so you entered #{first } and #{second } "
-  puts power(first, second)
+  print "\nWhich option would you like? square(s) or power(p)? Please type in one (s or p)"
+  ans = gets.chomp.downcase
+  if ans == "s"
+    print "What number would you like the square of? "
+    third = gets.chomp.to_i
+    puts square(third)
+  elsif ans == "p"
+    print "What is the first number?"
+    first = gets.chomp.to_i
+    puts "Ok, you entered #{first }, now what is your second number? "
+    second = gets.chomp.to_i
+    puts "alright so you entered #{first } and #{second } "
+    puts power(first, second)
+  else
+    print "\n\n\n Error In Advanced Input\n\n\n"
   end
-  print "What number would you like the square of? "
-  third = gets.chomp
-  puts square(third)
 end
-
 
 def square(x)
   x*x
@@ -26,46 +27,71 @@ def power(a, b)
 end
 
 
-def add(first_number, second_number)
-  print "What is the first number?"
-  first_number = gets.chomp
-  print "What is the second number?"
-  second_number = gets.chomp
-  first_number + second_number
+def basiccalc()
+  print "What would you like to do? \n"
+  print "add (+) , subtract (-) , multiply (*) , divide (/) \n"
+  answer = gets.chomp
+  filterbasic(answer)
+
 end
 
-def subtract(first_number, second_number)
-  print "What is the first number?"
-  first_number = gets.chomp
-  print "What is the second number?"
-  second_number = gets.chomp
-  first_number - second_number
+def filterbasic(answer)
+  if answer == "+" || answer == "a"
+    add()
+  elsif answer =="-" || answer == "s"
+    subtract()
+  elsif answer == "*" || answer == "m"
+    multiply
+  elsif answer == "/" || answer == "d"
+    divide()
+  else
+    print "error"
+  end
+
 end
 
-def multiply(first_number, second_number)
-  print "What is the first number?"
-  first_number = gets.chomp
-  print "What is the second number?"
-  second_number = gets.chomp
-  first_number * second_number
+
+def add()
+  print "What is the first number?  --> "
+  first_number = gets.chomp.to_i
+  print "What is the second number? --> "
+  second_number = gets.chomp.to_i
+  print "*** \n\nThe Answer:     #{first_number + second_number}\n\n***\n"
 end
 
-def divide(first_number, second_number)
-  print "What is the dividend?"
-  first_number = gets.chomp
-  print "What is the divisor?"
-  second_number = gets.chomp
-  first_number / second_number
+def subtract()
+  print "What is the first number?  --> "
+  first_number = gets.chomp.to_i
+  print "What is the second number? --> "
+  second_number = gets.chomp.to_i
+print "*** \n\nThe Answer:     #{first_number - second_number}\n\n***\n"
+end
+
+def multiply()
+  print "What is the first number?  --> "
+  first_number = gets.chomp.to_i
+  print "What is the second number? --> "
+  second_number = gets.chomp.to_i
+  print "*** \n\nThe Answer:     #{first_number * second_number}\n\n***\n"
+end
+
+def divide()
+  print "What is the first number?  --> "
+  first_number = gets.chomp.to_i
+  print "What is the second number? --> "
+  second_number = gets.chomp.to_i
+  print "*** \n\nThe Answer:     #{first_number / second_number}\n\n***\n"
 end
 
 def filterselection(input)
   exit = false
   if (input == "1" || input.downcase == "b")
     #Call function for BASIC
-    print "\n1/b\n"
+    basiccalc()
   elsif (input == '2' || input.downcase == "a")
     #Call function for Advanced
-    print "\n2/a\n"
+    advanced_calc()
+
   elsif(input == "3" || input.downcase == "e")
     #exit
     exit = true
