@@ -1,4 +1,4 @@
-
+require 'rainbow'
 ### Simon ###
 
 def advanced_calc()
@@ -98,11 +98,12 @@ def filterselection(input)
   elsif (input == '2' || input.downcase == "a")
     #Call function for Advanced
     advanced_calc()
-  elsif(input == "3" || input.downcase == "e")
-
+  elsif(input == "6" || input.downcase == "e")
     #exit
     exit = true
     print "\n\n ****************\n \n GOOD BYE \n\n ****************"
+  elsif (input == "3" || input.downcase == "i")
+    find_bmi()
   else
     print "\n***\n You have not entered a valid choice. \n***\n".foreground(:red )
   end
@@ -113,7 +114,8 @@ def options()
   print "\n What type of calculator would you like to use?\n"
   print "(1 or B  => Basic Calculator)\n".foreground(:blue)
   print "(2 or A  => Advanced Calculator)\n".foreground(:blue)
-  print "(3 or E  => Exit)\n\n".foreground(:blue)
+  print "(3 or I   => Calculate BMI)\n".foreground(:blue)
+  print "(6 or E  => Exit)\n\n".foreground(:blue)
 end
 
 
