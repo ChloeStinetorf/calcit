@@ -5,11 +5,13 @@ def mortgage_calc()
   print "\n\n"
   print "What is the principal amount? "
   p = gets.chomp.to_i
-  print "What is the interest rate? "
-  r = gets.chomp.to_i/100
-  print "How many years left on your mortgage? "
+  print "What is the monthly 1interest rate? "
+  r = gets.chomp.to_f
+  print "How many payments do you want to payoff your mortgage in? "
   n = gets.chomp.to_i
-  c = p((r*(1 + r)**n)/(((1 + r)**n)-1))
+  numerator = r*((1 + r)**n)
+  denominator = ((1 + r)**n)-1
+  c = p*(numerator/denominator)
 end
 
 def advanced_calc()
