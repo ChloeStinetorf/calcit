@@ -1,5 +1,21 @@
 require 'rainbow'
 ### Simon ###
+### BMI ###
+
+
+def bmi(lbs,inch)
+  (lbs/(inch * inch))*703
+end
+
+def find_bmi()
+  puts `clear`
+  print "Let me help you find out your Body Mass Index, how much do you weight?"
+   lbs = gets.chomp.to_f
+  print "Now tell me how tall are you in inches?"
+  inch = gets.chomp.to_f
+  print "Your BMI is " + bmi(lbs, inch).to_s
+end
+
 
 def advanced_calc()
   print "\nWhich option would you like? square(s) or power(p)? Please type in one (s or p)  \n".foreground(:blue)
@@ -154,20 +170,5 @@ end
 # print "\n\n\n\n"
 
 
-### BMI ###
-
-
-def bmi(lbs,inch)
-  (lbs/(inch * inch))*703
-end
-
-def find_bmi()
-  puts `clear`
-  print "Let me help you find out your Body Mass Index, how much do you weight?"
-   lbs = gets.chomp.to_f
-  print "Now tell me how tall are you in inches?"
-  inch = gets.chomp.to_f
-  print "Your BMI is " + bmi(lbs, inch).to_s
-end
 
 
