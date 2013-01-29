@@ -98,12 +98,18 @@ def filterselection(input)
   elsif (input == '2' || input.downcase == "a")
     #Call function for Advanced
     advanced_calc()
+  elsif (input == "3" || input.downcase == "i")
+    find_bmi()
+  elsif (input =="4" || input.downcase == "m")
+    #Mortage Stuff
+
+  elsif (input == "5" || input.downcase == "c")
+    #Car Trip Info
+
   elsif(input == "6" || input.downcase == "e")
     #exit
     exit = true
     print "\n\n ****************\n \n GOOD BYE \n\n ****************"
-  elsif (input == "3" || input.downcase == "i")
-    find_bmi()
   else
     print "\n***\n You have not entered a valid choice. \n***\n".foreground(:red )
   end
@@ -115,6 +121,8 @@ def options()
   print "(1 or B  => Basic Calculator)\n".foreground(:blue)
   print "(2 or A  => Advanced Calculator)\n".foreground(:blue)
   print "(3 or I   => Calculate BMI)\n".foreground(:blue)
+  print "(4 or M => Calculate Morgage)\n".foreground(:blue)
+  print "(5 or C  => Car Trip Info)\n ".foreground(:blue)
   print "(6 or E  => Exit)\n\n".foreground(:blue)
 end
 
@@ -151,13 +159,15 @@ end
 def bmi(lbs,inch)
   (lbs/(inch * inch))*703
 end
+
 def find_bmi()
-puts `clear`
-print "Let me help you find out your Body Mass Index, how much do you weight?"
- lbs = gets.chomp.to_f
-print "Now tell me how tall are you in inches?"
-inch = gets.chomp.to_f
-print "Your BMI is " + bmi(lbs, inch).to_s
+  puts `clear`
+  print "Let me help you find out your Body Mass Index, how much do you weight?"
+   lbs = gets.chomp.to_f
+  print "Now tell me how tall are you in inches?"
+  inch = gets.chomp.to_f
+  print "Your BMI is " + bmi(lbs, inch).to_s
+end
 
 
 
