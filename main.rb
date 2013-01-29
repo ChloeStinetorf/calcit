@@ -1,26 +1,29 @@
+require  'rainbow'
 ### Simon ###
 
 def advanced_calc()
-  print "\nWhich option would you like? square(s) or power(p)? Please type in one (s or p)"
+  print "\nWhich option would you like? square(s) or power(p)? Please type in one (s or p)  \n"
   ans = gets.chomp.downcase
   if ans == "s"
     print "What number would you like the square of? "
     third = gets.chomp.to_i
-    puts square(third)
+    print "\n***\nThe answer is: \n\n " + square(third).to_s
+    print "\n***\n"
   elsif ans == "p"
-    print "What is the first number?"
+    print "What is the first number?  "
     first = gets.chomp.to_i
-    puts "Ok, you entered #{first }, now what is your second number? "
+    print "Ok, you entered #{first }, now what is your second number?   "
     second = gets.chomp.to_i
-    puts "alright so you entered #{first } and #{second } "
-    puts power(first, second)
+    puts "alright so you entered #{first } and #{second } \n "
+    print "\n***\nThe answer is:   \n\n" + power(first, second).to_s
+    print "\n***\n"
   else
     print "\n\n\n Error In Advanced Input\n\n\n"
   end
 end
 
 def square(x)
-  x*x
+  x ** x
 end
 
 def power(a, b)
@@ -36,6 +39,7 @@ def basiccalc()
 end
 
 def filterbasic(answer)
+  print "\n"
   if answer == "+" || answer == "a"
     add()
   elsif answer =="-" || answer == "s"
@@ -76,6 +80,7 @@ def multiply()
 end
 
 def divide()
+
   print "What is the first number?  --> "
   first_number = gets.chomp.to_i
   print "What is the second number? --> "
@@ -85,14 +90,15 @@ end
 ### Nick ###
 def filterselection(input)
   exit = false
+  puts `clear`
   if (input == "1" || input.downcase == "b")
     #Call function for BASIC
     basiccalc()
   elsif (input == '2' || input.downcase == "a")
     #Call function for Advanced
     advanced_calc()
-
   elsif(input == "3" || input.downcase == "e")
+
     #exit
     exit = true
     print "\n\n ****************\n \n GOOD BYE \n\n ****************"
@@ -111,7 +117,8 @@ end
 
 
 ########     Welcome Code ###############
-print "\n\n\nWelcome to the most amazing calculator\n"
+puts `clear`
+print "Welcome to the most amazing calculator\n"
 print "\n*****************************************\n"
 options()
 ########  Initial Selection
