@@ -98,7 +98,7 @@ def filterselection(input)
   elsif (input == '2' || input.downcase == "a")
     #Call function for Advanced
     advanced_calc()
-  elsif(input == "6" || input.downcase == "e")
+  elsif (input == "6" || input.downcase == "e")
     #exit
     exit = true
     print "\n\n ****************\n \n GOOD BYE \n\n ****************"
@@ -151,6 +151,7 @@ end
 def bmi(lbs,inch)
   (lbs/(inch * inch))*703
 end
+
 def find_bmi()
 puts `clear`
 print "Let me help you find out your Body Mass Index, how much do you weight?"
@@ -158,6 +159,8 @@ print "Let me help you find out your Body Mass Index, how much do you weight?"
 print "Now tell me how tall are you in inches?"
 inch = gets.chomp.to_f
 print "Your BMI is " + bmi(lbs, inch).to_s
+end
+
 
 
 
