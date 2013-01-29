@@ -149,7 +149,7 @@ end
 def bmi(lbs,inch)
   (lbs/(inch * inch))*703
 end
-
+def find_bmi()
 puts `clear`
 print "Let me help you find out your Body Mass Index, how much do you weight?"
  lbs = gets.chomp.to_f
