@@ -1,3 +1,4 @@
+### Simon ###
 
 def advanced_calc()
   print "\nWhich option would you like? square(s) or power(p)? Please type in one (s or p)"
@@ -25,7 +26,6 @@ end
 def power(a, b)
   a**b
 end
-
 
 def basiccalc()
   print "What would you like to do? \n"
@@ -82,7 +82,7 @@ def divide()
   second_number = gets.chomp.to_i
   print "*** \n\nThe Answer:     #{first_number / second_number}\n\n***\n"
 end
-
+### Nick ###
 def filterselection(input)
   exit = false
   if (input == "1" || input.downcase == "b")
