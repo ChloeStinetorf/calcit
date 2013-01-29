@@ -1,4 +1,4 @@
-require  'rainbow'
+
 ### Simon ###
 
 def advanced_calc()
@@ -140,7 +140,25 @@ end
 
 
 
-print "\n\n\n\n"
+# print "\n\n\n\n"
+
+
+### BMI ###
+
+
+def bmi(lbs,inch)
+  (lbs/(inch * inch))*703
+end
+
+puts `clear`
+print "Let me help you find out your Body Mass Index, how much do you weight?"
+ lbs = gets.chomp.to_f
+print "Now tell me how tall are you in inches?"
+inch = gets.chomp.to_f
+print "Your BMI is " + bmi(lbs, inch).to_s
+
+
+
 
 
 
