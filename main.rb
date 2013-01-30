@@ -5,13 +5,15 @@ def mortgage_calc()
   print "\n\n"
   print "What is the principal amount? "
   p = gets.chomp.to_i
-  print "What is the monthly 1interest rate? "
+  print "What is the monthly interest rate? "
   r = gets.chomp.to_f
   print "How many payments do you want to payoff your mortgage in? "
   n = gets.chomp.to_i
   numerator = r*((1 + r)**n)
   denominator = ((1 + r)**n)-1
   c = p*(numerator/denominator)
+  print "\n**\nYour payment is :  #{c} \n\n"
+  gc
 end
 
 def trip_calc()
@@ -35,7 +37,6 @@ def trip_calc()
         print "You have negative MPG because you are a speed demon with a shity car. \n"
       end
     end
-
     print "It's going to take #{aps*dis} hours and will cost you $ #{mpg*dis*ppg}\n\n"
    gc
 end
@@ -97,7 +98,7 @@ def basiccalc()
   print "add (+) , subtract (-) , multiply (*) , divide (/) \n".foreground(:blue)
   answer = gets.chomp
   filterbasic(answer)
-
+  gc
 end
 
 def filterbasic(answer)
@@ -164,7 +165,7 @@ def filterselection(input)
     find_bmi()
   elsif (input =="4" || input.downcase == "m")
     #Mortage Stuff
-
+    mortgage_calc
   elsif (input == "5" || input.downcase == "c")
     #Car Trip Info
     trip_calc()
@@ -172,7 +173,7 @@ def filterselection(input)
 
     #exit
     exit = true
-    print "\n\n ****************\n \n GOOD BYE \n\n ****************"
+    print "\n\n ****************\n \n GOOD BYE \n\n ****************\n\n\n"
   else
     print "\n***\n You have not entered a valid choice. \n***\n".foreground(:red )
   end
@@ -183,8 +184,8 @@ def options()
   print "\n What type of calculator would you like to use?\n"
   print "(1 or B  => Basic Calculator)\n".foreground(:blue)
   print "(2 or A  => Advanced Calculator)\n".foreground(:blue)
-  print "(3 or I   => Calculate BMI)\n".foreground(:blue)
-  print "(4 or M => Calculate Morgage)\n".foreground(:blue)
+  print "(3 or I  => Calculate BMI)\n".foreground(:blue)
+  print "(4 or M  => Calculate Mortgage)\n".foreground(:blue)
   print "(5 or C  => Car Trip Info)\n".foreground(:blue)
   print "(6 or E  => Exit)\n\n".foreground(:blue)
 end
